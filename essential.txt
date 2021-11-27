@@ -1,0 +1,41 @@
+User:
+ - name
+ - phone
+ - address
+ - email
+ - ability to order books
+
+Annonymous User:
+ - User
+
+Registered User
+ - User
+ - password
+ - ability to order books
+
+
+Seller
+ - phone contact
+ - street address
+ - ability to add books and edit books
+ - ability to process book orders
+ 
+
+Seller adds books to the website
+
+Book:
+ - name
+ - author
+ - ibn
+ - quantity
+ - price
+
+Order:
+ - date
+ - user contact information - preferred way of payment
+ - status: processed / not processed 
+
+Login:
+ for Seller and Users
+
+ 
