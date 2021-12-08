@@ -38,4 +38,9 @@
    margin-left: 5px;
    padding: 0;
    max-width: 50%;
- }
+}
+
+img {
+  max-width: 250px;
+  max-height:250px;
+}
