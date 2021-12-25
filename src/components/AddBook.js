@@ -11,15 +11,7 @@ function AddBook() {
         let bookUrl = formData.get("url")
         let bookDescription = formData.get("description")
         let bookQuantity = formData.get("quantity")
-        let book = {
-            name: bookToBeAdded,
-            author: bookAuthor,
-            price: bookPrice,
-            url: bookUrl,
-            description: bookDescription,
-            quantity: bookQuantity
-        }
-
+        
         if (bookToBeAdded !== null && bookToBeAdded !== 'undefined' && bookToBeAdded !== "") {
             BookService.addBook(bookToBeAdded, bookAuthor, bookPrice, bookUrl, bookDescription, bookQuantity)
             document.getElementById('name').value = null

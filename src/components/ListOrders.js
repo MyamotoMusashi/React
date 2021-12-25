@@ -26,7 +26,7 @@ function ListOrders() {
                         <p>Quantity: {order.book.quantity}</p>
                         <p>{order.book.name}</p>
                     </article>
-                    <p>Customer: {order.user}</p>
+                    <p>Customer: {order.user.name}</p>
                     <p>Status: {order.status}</p>
                 </section>
             </li>

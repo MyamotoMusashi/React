@@ -27,6 +27,22 @@ export async function addBook(bookName, bookAuthor, bookPrice, bookUrl, bookDesc
     }
 }
 
+export async function orderBook(book){
+    if (book.quantity > 1) {
+        book.quantity = book.quantity - 1
+        await fetch('/books', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(book)
+        });
+    }
+    else {
+       deleteBook(book)
+    }
+}
+
 export async function deleteBook(book){
     await fetch('/books', {
         method: 'DELETE',
@@ -40,7 +56,8 @@ export async function deleteBook(book){
 const BookService = {
     getBooks: getBooks,
     addBook: addBook,
-    deleteBook: deleteBook
+    deleteBook: deleteBook,
+    orderBook: orderBook
 }
 
 export default BookService

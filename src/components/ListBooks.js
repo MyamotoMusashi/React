@@ -35,9 +35,12 @@ function ListBooks() {
     }
 
     function orderBook(book) {
-        let user = UserService.getCurrentUser()
+        let user = {
+            name: UserService.getCurrentUser()
+        }
+
         setBooks(books.filter(item => item !== book))
-        BookService.deleteBook(book)
+        BookService.orderBook(book)
         OrderService.addOrder(book, user)
     }
 

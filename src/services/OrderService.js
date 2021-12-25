@@ -2,10 +2,12 @@ let orders = []
 
 export async function getOrders() {
     const orders = await (await fetch('/orders')).json()
+    console.log(orders)
     return orders;
 }
 
 export async function addOrder(book, user) {
+    console.log("order added")
     let order = {
         book: book,
         user: user,
