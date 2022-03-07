@@ -8,6 +8,7 @@ import ListOrders from './components/ListOrders';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Register from './components/Register'
+import ShoppingCart from './components/ShoppingCart';
 
 import UserService from './services/UserService';
 
@@ -34,9 +35,40 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <>
       <Header username={username} />
       <main>
+        <div id="templatemo_content_left">
+          <div class="templatemo_content_left_section">
+            <h1>Categories</h1>
+            <ul>
+              <li><a href="subpage.html">Donec accumsan urna</a></li>
+              <li><a href="subpage.html">Proin vulputate justo</a></li>
+              <li><a href="#">In sed risus ac feli</a></li>
+              <li><a href="#">Aliquam tristique dolor</a></li>
+              <li><a href="#">Maece nas metus</a></li>
+              <li><a href="#">Sed pellentesque placerat</a></li>
+              <li><a href="#">Suspen disse</a></li>
+              <li><a href="#">Maece nas metus</a></li>
+              <li><a href="#">In sed risus ac feli</a></li>
+            </ul>
+          </div>
+          <div class="templatemo_content_left_section">
+            <h1>Bestsellers</h1>
+            <ul>
+              <li><a href="#">Vestibulum ullamcorper</a></li>
+              <li><a href="#">Maece nas metus</a></li>
+              <li><a href="#">In sed risus ac feli</a></li>
+              <li><a href="#">Praesent mattis varius</a></li>
+              <li><a href="#">Maece nas metus</a></li>
+              <li><a href="#">In sed risus ac feli</a></li>
+              <li><a href="#">Flash Templates</a></li>
+              <li><a href="#">CSS Templates</a></li>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="http://www.photovaco.com" target="_parent">Free Photos</a></li>
+            </ul>
+          </div>
+        </div>
         <Route path="/" exact strict component={ListBooks} />
         <Route path="/login">
           <Login onLogin={onLogin} />
@@ -47,9 +79,15 @@ function App() {
         <Route path="/logout">
           <Logout onLogout={onLogout} />
         </Route>
-        <Route path="/register" component={Register}/>
+        <Route path="/register" component={Register} />
+        <Route path="/shopping-cart" component={ShoppingCart}/>
       </main>
-    </div>
+      <footer>
+
+        <a href="subpage.html">Home</a> | <a href="subpage.html">Search</a> | <a href="subpage.html">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © 2024 <a href="#"><strong>Your Company Name</strong></a>
+      </footer>
+    </>
   );
 }
 

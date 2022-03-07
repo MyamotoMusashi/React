@@ -6,13 +6,7 @@ export async function getOrders() {
     return orders;
 }
 
-export async function addOrder(book, user) {
-    console.log("order added")
-    let order = {
-        book: book,
-        user: user,
-    }
-
+export async function addOrder(order) {
     await fetch('/orders', {
         method: 'POST',
         headers: {
