@@ -26,8 +26,8 @@ function ListBooks() {
                         <p>Price: {book.price} BGN</p>
                         <h3>Quantity: {book.quantity}</h3>
                         <div class="primary_button" onClick={() => orderBook(book)}><a href="#">Order</a></div>
-                        <div class="detail_button"><a href="#">Detail</a></div>
-                        <div class="detail_button"><a href="#">Edit</a></div>
+                        <div class="secondary_button"><a href="#">Detail</a></div>
+                        <div class="secondary_button"><a href="#">Edit</a></div>
                     </div>
                 </div>
             </>

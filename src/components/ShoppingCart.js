@@ -23,7 +23,7 @@ function ShoppingCart() {
                             <p>{order.book.description}</p>
                             <p>Price: {order.book.price} BGN</p>
                             <h3>Quantity: {order.book.quantity}</h3>
-                            <div class="primary_button"><a href="#">Remove</a></div>
+                            <div class="secondary_button"><a href="#">Remove</a></div>
                         </div>
                         <div class="cleaner"></div>
                     </div>
@@ -41,7 +41,7 @@ function ShoppingCart() {
                             <p>{order.book.description}</p>
                             <p>Price: {order.book.price} BGN</p>
                             <h3>Quantity: {order.book.quantity}</h3>
-                            <div class="primary_button"><a href="#">Remove</a></div>
+                            <div class="secondary_button"><a href="#">Remove</a></div>
                         </div>
                         <div class="cleaner"></div>
                     </div>
@@ -51,9 +51,11 @@ function ShoppingCart() {
         }
     }
 
+    function removeOrderFromCart(order) {
+
+    }
+
     function checkout(shoppingCartOrders) {
-        console.log('checkout')
-        console.log(shoppingCartOrders)
         shoppingCartOrders.forEach(order => {
             OrderService.addOrder(order)
         });
