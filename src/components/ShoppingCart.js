@@ -1,3 +1,4 @@
+import { cleanup } from '@testing-library/react';
 import React from 'react'
 import OrderService from '../services/OrderService';
 import ShoppingCartService from "../services/ShoppingCartService";
@@ -12,6 +13,7 @@ function ShoppingCart() {
         getShoppingCartOrders()
     }, [])
 
+
     let orderTemplate = function (order) {
         if (order.book.id % 2 == 0) {
             return (
@@ -23,7 +25,7 @@ function ShoppingCart() {
                             <p>{order.book.description}</p>
                             <p>Price: {order.book.price} BGN</p>
                             <h3>Quantity: {order.book.quantity}</h3>
-                            <div class="secondary_button"><a href="#">Remove</a></div>
+                            <div class="secondary_button" onClick={() => removeOrderFromShoppingCart(order)}><a href="#">Remove</a></div>
                         </div>
                         <div class="cleaner"></div>
                     </div>
@@ -41,7 +43,7 @@ function ShoppingCart() {
                             <p>{order.book.description}</p>
                             <p>Price: {order.book.price} BGN</p>
                             <h3>Quantity: {order.book.quantity}</h3>
-                            <div class="secondary_button"><a href="#">Remove</a></div>
+                            <div class="secondary_button" onClick={() => removeOrderFromShoppingCart(order)}><a href="#">Remove</a></div>
                         </div>
                         <div class="cleaner"></div>
                     </div>
@@ -51,8 +53,9 @@ function ShoppingCart() {
         }
     }
 
-    function removeOrderFromCart(order) {
-
+    async function removeOrderFromShoppingCart(order) {
+        ShoppingCartService.removeOrderFromShoppingCart(order)
+        setShoppingCartOrders(await ShoppingCartService.getShoppingCart())
     }
 
     function checkout(shoppingCartOrders) {
@@ -67,8 +70,8 @@ function ShoppingCart() {
         <>
             <div id="templatemo_content_right">
                 {shoppingCartOrders.map(order => orderTemplate(order))}
+                <div id="checkout_button" class="primary_button" onClick={() => checkout(shoppingCartOrders)}><a href="#">Checkout</a></div>
             </div>
-            <div class="primary_button" onClick={() => checkout(shoppingCartOrders)}><a href="#">Checkout</a></div>
         </>
     )
 }

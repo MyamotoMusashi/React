@@ -33,6 +33,17 @@ export async function clear() {
     })
 }
 
+export async function removeOrderFromShoppingCart(order) {
+    console.log('here')
+    console.log(order.book.id)
+    await fetch(`/shopping-cart?remove=${order.book.id}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+        }
+    })
+}
+
 export async function orderBook(book) {
     if (book.quantity > 1) {
         book.quantity = book.quantity - 1
@@ -63,7 +74,7 @@ const ShoppingCartService = {
     getShoppingCart: getShoppingCart,
     addToShoppingCart: addToShoppingCart,
     clear: clear,
-    orderBook: orderBook
+    removeOrderFromShoppingCart: removeOrderFromShoppingCart
 }
 
 export default ShoppingCartService 

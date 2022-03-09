@@ -324,3 +324,7 @@ footer a{
 	font-weight: normal;
 }
 /* end of footer */
+
+#checkout_button {
+	margin-left: 40%;
+}

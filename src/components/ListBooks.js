@@ -41,7 +41,6 @@ function ListBooks() {
 
         //setBooks(books.filter(item => item !== book))
         BookService.orderBook(book)
-        book.quantity = 1
         await ShoppingCartService.addToShoppingCart(book, user)
         const books = await BookService.getBooks()
         setBooks(books)
