@@ -3,8 +3,6 @@ export async function getShoppingCart() {
     let shoppingCart = new Map()
     shoppingCart = await (await fetch('/shopping-cart')).json()
     let shoppingCartMap = new Map(Object.entries(shoppingCart.orders))
-    console.log(shoppingCart.orders)
-    console.log(shoppingCartMap)
 
     return Array.from(shoppingCartMap.values())
 }
@@ -33,10 +31,8 @@ export async function clear() {
     })
 }
 
-export async function removeOrderFromShoppingCart(order) {
-    console.log('here')
-    console.log(order.book.id)
-    await fetch(`/shopping-cart?remove=${order.book.id}`, {
+export async function removeOrderFromShoppingCart(book) {
+    await fetch(`/shopping-cart?remove=${book.id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',

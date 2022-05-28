@@ -8,7 +8,7 @@ function EmployeeHeader(props) {
         <>
             <UserHeader username={username}/>
             <li><Link to="/add-book">Add book</Link></li>
-            <li><Link to="/orders">Orders</Link></li>
+            <li><Link to="/orders?status=notProcessed">Orders</Link></li>
             <li><a href="#">Add Category</a></li>
             <li><a href="#">Add Author</a></li>
             <li><a href="#">Users</a></li>

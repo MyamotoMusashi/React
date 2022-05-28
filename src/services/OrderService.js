@@ -16,9 +16,20 @@ export async function addOrder(order) {
     });
 }
 
+export async function editOrder(order) {
+    await fetch('/orders', {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(order)
+    })
+}
+
 const OrderService = {
     getOrders: getOrders,
-    addOrder: addOrder
+    addOrder: addOrder,
+    editOrder
 }
 
 export default OrderService

@@ -8,16 +8,20 @@ function AdminHeader(props) {
         <>
             <UserHeader username={username} />
             <li><Link to="/add-book">Add book</Link></li>
-            <li><a href="#">Order book</a></li>
-            <li><Link to="/orders">Orders</Link></li>
+            <li><a href="/">Books</a></li>
+            <li><Link to="/orders?status=notProcessed">Orders</Link></li>
             <li><a href="#">Admin</a></li>
-            <li><a href="#">Add Category</a></li>
+            <li>
+                <Link to="/add-category">Add Category</Link>
+            </li>
             <li><a href="#">Add Author</a></li>
             <li><a href="#">Employees</a></li>
             <li><a href="#">Add Employee</a></li>
             <li><a href="#">Add Store</a></li>
-            <li><a href="#">Users</a></li>
-            <li><a href="#">Add User</a></li>
+            <li>
+                <Link to='/users'>Users</Link>
+            </li>
+            <li><a href="/add-user">Add User</a></li>
             <li><a href="#">Add Admin</a></li>
             <li><a href="#">Admins</a></li>
         </>

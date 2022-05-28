@@ -3,20 +3,28 @@ import User from '../entities/User'
 let users = []
 let currentUser = null;
 
-export function getCurrentUser(){
+export function getCurrentUser() {
     return currentUser;
 }
 
-export function setCurrentUser(user){
+export function setCurrentUser(user) {
     currentUser = user;
 }
 
-export function registerUser(username){
-    users.push(new User(username))
-    console.log(getAllUsers())
+export async function registerUser(username) {
+    let user = new User(username)
+
+    await fetch('/users/register', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(user)
+    });
 }
 
-export function getAllUsers(){
+export async function getAllUsers() {
+    const users = await(await fetch('/users')).json()
     return users
 }
 
