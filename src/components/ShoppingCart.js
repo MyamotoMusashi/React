@@ -9,6 +9,7 @@ function ShoppingCart() {
     React.useEffect(() => {
         async function getShoppingCartOrders() {
             const shoppingCartOrders = await ShoppingCartService.getShoppingCart();
+            console.log(shoppingCartOrders)
             setShoppingCartOrders(shoppingCartOrders);
         }
         getShoppingCartOrders()

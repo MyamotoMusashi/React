@@ -43,8 +43,8 @@ function ListOrders() {
     let orderTemplate = function (order) {
         if (order.book.id % 2 == 0) {
             return (
-                <li key={order.id}>
-                    <div className="templatemo_product_box">
+                <>
+                    <li key={order.id} className="templatemo_product_box">
                         <BookItem book={order.book} />
                         <p>Customer: {order.user.name}</p>
                         <p>Status:
@@ -55,15 +55,15 @@ function ListOrders() {
                             </select>
                         </p>
                         <a href="#" className="secondary_button">Remove</a>
-                    </div>
+                    </li>
                     <div className="cleaner_with_height">&nbsp;</div>
-                </li>
+                </>
             );
         }
         else {
             return (
-                <li key={order.id}>
-                    <div className="templatemo_product_box">
+                <>
+                    <li key={order.id} className="templatemo_product_box">
                         <BookItem book={order.book} />
                         <p>Customer: {order.user.name}</p>
                         <p>Status:
@@ -74,9 +74,9 @@ function ListOrders() {
                             </select>
                         </p>
                         <a href="#" className="secondary_button">Remove</a>
-                    </div>
+                    </li>
                     <div className="cleaner_with_width">&nbsp;</div>
-                </li>
+                </>
             );
         }
     }

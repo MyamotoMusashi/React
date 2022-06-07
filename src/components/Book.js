@@ -9,14 +9,13 @@ function Book(props) {
         props.orderBook(book)
     }
 
+ 
     return (
         <>
-            <div class="templatemo_product_box">
                 <BookItem book={book}></BookItem>
                 <div class="primary_button" onClick={orderBook}><a href="#">Order</a></div>
                 <div class="secondary_button"><a href="#">Detail</a></div>
                 <div class="secondary_button"><a href="#">Edit</a></div>
-            </div>
         </>
     );
 }

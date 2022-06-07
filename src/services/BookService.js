@@ -1,7 +1,8 @@
 let books = []
 
-export async function getBooks() {
-    const books = await (await fetch('/books')).json()
+export async function getBooks(page) {
+    page = page || 1
+    const books = await (await fetch(`/papers?page=${page}`)).json()
     return books;
 }
 

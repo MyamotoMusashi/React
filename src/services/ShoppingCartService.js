@@ -1,8 +1,8 @@
 
 export async function getShoppingCart() {
-    let shoppingCart = new Map()
+    let shoppingCart
     shoppingCart = await (await fetch('/shopping-cart')).json()
-    let shoppingCartMap = new Map(Object.entries(shoppingCart.orders))
+    let shoppingCartMap = new Map(Object.entries(shoppingCart))
 
     return Array.from(shoppingCartMap.values())
 }
